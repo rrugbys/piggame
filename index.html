@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="app.css" />
+    </head>
+    <body>
+        <div class="gameboard">
+            <div class="playboard">
+                <div class="player player-0" id="player-0">
+                    <div class="player-label player-label-0">Player 1</div>
+                    <div class="player-score player-score-0" id="score-0">0</div>
+                    <div class="player-round player-round-0">
+                        <label>CURRENT</label>
+                        <div id="round-0">0</div>
+                    </div>
+                </div>
+                <div class="player player-1" id="player-1">
+                    <div class="player-label player-label-1">Player 2</div>
+                    <div class="player-score player-score-1" id="score-1">0</div>
+                    <div class="player-round player-round-1">
+                        <label>CURRENT</label>
+                        <div id="round-1">0</div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-roll hide"><i class="ion-ios-loop"></i>Roll dice</button>
+            <button class="btn-hold hide"><i class="ion-ios-download-outline"></i>Hold</button>
+            <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+            <img src="dice-5.png" alt="Dice" class="dice hide" id="dice">
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>
