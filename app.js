@@ -15,6 +15,21 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+var deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', function(e) {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    console.log("INSTALLABLE")
+// Stash the event so it can be triggered later.
+deferredPrompt = e;
+// Update UI notify the user they can install the PWA
+
+});
+window.addEventListener('appinstalled', function(evt) {
+    alert('a2hs installed');
+});
+
 window.addEventListener('load', function(){
     var btnRoll = document.querySelector(".btn-roll");
     var btnHold = document.querySelector(".btn-hold");
