@@ -78,9 +78,9 @@ window.addEventListener('load', function(){
         dice.classList.add("rotate-center");
         btnRoll.disabled = true;
         btnHold.disabled = true;
+        dice.classList.remove("hide");
         var timeout = setTimeout(function() {
             dice.src = "dice-"+random+".png";
-            dice.classList.remove("hide");
             if(random == 1) {
                 changePlayer();
             } else  {
