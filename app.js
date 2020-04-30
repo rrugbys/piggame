@@ -1,6 +1,5 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js', { scope: '/piggame/' }).then(function(reg) {
-
         if(reg.installing) {
             console.log('Service worker installing');
         } else if(reg.waiting) {
