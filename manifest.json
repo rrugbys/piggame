@@ -3,6 +3,7 @@
     "short_name": "PigGame",
     "description": "PigGame",
     "start_url": "/piggame",
+    "scope": "/piggame/",
     "background_color": "#EB4D4D",
     "theme_color": "#EB4D4D",
     "icons": [{
