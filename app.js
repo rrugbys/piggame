@@ -21,6 +21,8 @@ window.addEventListener('load', function(){
     var dice = document.querySelector("#dice");
     var player0 = document.querySelector("#player-0");
     var player1 = document.querySelector("#player-1");
+    var final = document.querySelector("#full-body .text");
+    var fullBody = document.querySelector("#full-body");
     var activePlayer = 0;
     var roundScore = 0;
     var score = [0,0];
@@ -42,13 +44,18 @@ window.addEventListener('load', function(){
     btnHold.addEventListener("click", function () {
         score[activePlayer] += roundScore;
         if(score[activePlayer] >= 100) {
-            alert("Player "+(activePlayer+1)+" won !");
-            resetGame();
+            document.querySelector("#score-"+activePlayer).textContent = score[activePlayer];
+            fullBody.classList.remove("hide");
+            final.textContent = "Player "+(activePlayer+1)+" won !";
         } else {
             document.querySelector("#score-"+activePlayer).textContent = score[activePlayer];
             dice.classList.add("hide");
             changePlayer();
         }
+    });
+
+    fullBody.addEventListener("click", function() {
+       resetGame()
     });
 
     function changePlayer() {
@@ -66,6 +73,7 @@ window.addEventListener('load', function(){
         btnRoll.classList.add("hide");
         btnHold.classList.add("hide");
         dice.classList.add("hide");
+        fullBody.classList.add("hide");
         player0.classList.remove("active");
         player1.classList.remove("active");
         document.querySelector("#round-0").textContent = '0';

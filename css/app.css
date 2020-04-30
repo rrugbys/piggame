@@ -206,6 +206,38 @@ a{
 
 }
 
+#full-body{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+#full-body .content{
+    width: 300px;
+    margin: 0 auto;
+    background: #fff;
+    top: 50%;
+    position: relative;
+    transform: translateY(-50%);
+    padding: 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#full-body .content .text {
+    font-size: 20px;
+    line-height: 40px;
+}
+
+#full-body .content img {
+    width: 128px;
+}
+
 @media only screen and (max-width: 900px) {
     body{
         background: none;
