@@ -2,16 +2,18 @@ self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open('v1').then(function(cache) {
             return cache.addAll([
-                'index.html',
-                './app.css',
+                './index.html',
+                './css/app.css',
                 './app.js',
-                'dice-1.png',
-                'dice-2.png',
-                'dice-3.png',
-                'dice-4.png',
-                'dice-5.png',
-                'dice-6.png',
-                'back.jpg'
+                './dice-1.png',
+                './dice-2.png',
+                './dice-3.png',
+                './dice-4.png',
+                './dice-5.png',
+                './dice-6.png',
+                './back.jpg',
+                './fonts/font.css',
+                './css/ionicons.min.css'
             ]);
         })
     );
