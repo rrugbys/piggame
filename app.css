@@ -149,7 +149,7 @@ i {
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     body{
         background: none;
         display: flex;
@@ -176,7 +176,7 @@ i {
     .btn-hold { top: 507px;}
 }
 
-@media only screen and (max-width: 800px) and (orientation: landscape) {
+@media only screen and (max-width: 900px) and (orientation: landscape) {
     .player-label{
         margin-top: 20px;
     }
