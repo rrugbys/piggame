@@ -3,8 +3,8 @@ self.addEventListener('install', function(event) {
         caches.open('v1').then(function(cache) {
             return cache.addAll([
                 'index.html',
-                'app.css',
-                'app.js',
+                './app.css',
+                './app.js',
                 'dice-1.png',
                 'dice-2.png',
                 'dice-3.png',
