@@ -21,6 +21,7 @@ body{
     position: relative;
     height: 100vh;
     color: #555;
+    background-attachment: fixed;
 }
 .gameboard{
     width: 80%;
@@ -53,11 +54,12 @@ body{
     font-size: 47px;
     position: absolute;
     color: #EB4D4D;
-    top: -14px;
+    top: 6px;
     margin-left: 10px;
 }
 
 .player-label {
+    padding-top: 20px;
     text-align: center;
     font-size: 30px;
     font-weight: 300;
@@ -147,12 +149,15 @@ i {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
     body{
         background: none;
+        display: flex;
     }
+
     .gameboard{
         width: 100%;
+        top:0;
     }
     .player-round{
         margin: 0;
@@ -164,6 +169,26 @@ i {
     .player-round-1{
         float: right;
     }
+    .playboard .player.active .player-label::after{
+        top: 6px;
+    }
+    .btn-roll { top: 453px;}
+    .btn-hold { top: 507px;}
+}
+
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+    .player-label{
+        margin-top: 20px;
+    }
+    .player-round{
+        margin-top: 60px;
+    }
+    .dice{
+        top: 120px;
+    }
+    .btn-roll { top: 253px;}
+    .btn-hold { top: 307px;}
+
 }
 
 @media only screen and (max-width: 480px) {
