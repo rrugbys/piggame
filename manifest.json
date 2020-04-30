@@ -1,0 +1,13 @@
+{
+    "name": "PigGame",
+    "short_name": "PigGame",
+    "description": "PigGame",
+    "start_url": "/",
+    "background_color": "#EB4D4D",
+    "theme_color": "#EB4D4D",
+    "icons": [{
+        "src": "pig.png",
+        "sizes": "512x512",
+        "type": "image/png"
+    }]
+}
