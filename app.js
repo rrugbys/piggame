@@ -35,15 +35,7 @@ window.addEventListener('load', function(){
 
     btnRoll.addEventListener("click", function () {
         var random = Math.ceil(Math.random()*6);
-        dice.src = "dice-"+random+".png";
-        dice.classList.remove("hide");
-        if(random == 1) {
-            changePlayer();
-        } else  {
-            var currentRound = document.querySelector("#round-"+activePlayer)
-            roundScore += random;
-            currentRound.textContent = roundScore
-        }
+        disableGame(random);
     });
 
 
@@ -58,7 +50,6 @@ window.addEventListener('load', function(){
             changePlayer();
         }
     });
-
 
     function changePlayer() {
         document.querySelector("#round-"+activePlayer).textContent = 0;
@@ -81,6 +72,26 @@ window.addEventListener('load', function(){
         document.querySelector("#round-1").textContent = '0';
         document.querySelector("#score-0").textContent = '0';
         document.querySelector("#score-1").textContent = '0';
+    }
+
+    function disableGame(random) {
+        dice.classList.add("rotate-center");
+        btnRoll.disabled = true;
+        btnHold.disabled = true;
+        var timeout = setTimeout(function() {
+            dice.src = "dice-"+random+".png";
+            dice.classList.remove("hide");
+            if(random == 1) {
+                changePlayer();
+            } else  {
+                var currentRound = document.querySelector("#round-"+activePlayer)
+                roundScore += random;
+                currentRound.textContent = roundScore
+            }
+            btnRoll.disabled = false;
+            btnHold.disabled = false;
+            dice.classList.remove("rotate-center");
+        }, 300);
     }
 });
 
@@ -112,3 +123,4 @@ function toggleFullScreen() {
         cancelFullScreen.call(doc);
     }
 }
+
