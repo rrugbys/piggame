@@ -17,6 +17,7 @@
     </head>
     <body>
         <div class="gameboard">
+            <button class="btn-help"><i class="ion-ios-help"></i></button>
             <div class="playboard">
                 <div class="player player-0" id="player-0">
                     <div class="player-label player-label-0">Player 1</div>
@@ -47,6 +48,52 @@
                 <img src="celebration.png" />
             </div>
         </div>
+        <div class="help hide">
+
+            <div class="content">
+                <button class="btn-cancel"><i class="ion-ios-close-outline"></i></button>
+                <div>
+                    Fun dice game - The first player to score 100 wins the game. It requires strategy and luck to win the game.
+                </div>
+                <div>
+                    This is a two-player game. A fun way for kids to learn strategies (to hold by taking their chances)
+                </div>
+                <div>
+                    Rules for the game:
+                    - Each turn, a player rolls the dice and accumulates points. But don't get greedy.
+                    - If Player rolls ONE, the player gives up the turn and all current chance points will be lost.
+                    - If a player taps on HOLD, all points of the current turn will be added to the main score.
+                    - First player to reach 100 points wins the game!
+                </div>
+                <div>
+                    Scoring Example:
+                    Scenario 1: Player1 rolls a 3 and decides to continue. Player1 again tolls 3 more times (5,3,1). Because Player1 rolled 1, so all scores will be lost and players earn 0 points. Now turn goes to Player2.
+
+                    Scenario 2: Player2 rolls a 6 and rolls 3 more times (4,2,5) and decide to click on HOLD. So the total of 6+4+2+5=17, 17 will get added to the main score, and turn goes to Player1.
+
+                    Scenario 3: When a player reaches a total of 100 or more points, the game ends and that player is the winner.
+                </div>
+            </div>
+
+        </div>
     </body>
+    <script>
+        if ('serviceWorker' in navigator) {
+
+            navigator.serviceWorker.register('sw.js').then(function(reg) {
+                if(reg.installing) {
+                    console.log('Service worker installing');
+                } else if(reg.waiting) {
+                    console.log('Service worker installed');
+                } else if(reg.active) {
+                    console.log('Service worker active');
+                }
+
+            }).catch(function(error) {
+                // registration failed
+                console.log('Registration failed with ' + error);
+            });
+        }
+    </script>
     <script src="app.js"></script>
 </html>

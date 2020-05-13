@@ -1,23 +1,10 @@
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js', { scope: '/piggame/' }).then(function(reg) {
-        if(reg.installing) {
-            console.log('Service worker installing');
-        } else if(reg.waiting) {
-            console.log('Service worker installed');
-        } else if(reg.active) {
-            console.log('Service worker active');
-        }
-
-    }).catch(function(error) {
-        // registration failed
-        console.log('Registration failed with ' + error);
-    });
-}
-
 window.addEventListener('load', function(){
     var btnRoll = document.querySelector(".btn-roll");
     var btnHold = document.querySelector(".btn-hold");
     var btnNew = document.querySelector(".btn-new");
+    var btnCancel = document.querySelector(".btn-cancel");
+    var btnHelp = document.querySelector(".btn-help");
+    var help = document.querySelector(".help");
     var dice = document.querySelector("#dice");
     var player0 = document.querySelector("#player-0");
     var player1 = document.querySelector("#player-1");
@@ -52,6 +39,14 @@ window.addEventListener('load', function(){
             dice.classList.add("hide");
             changePlayer();
         }
+    });
+
+    btnCancel.addEventListener("click", function() {
+        help.classList.add("hide");
+    });
+
+    btnHelp.addEventListener("click", function() {
+        help.classList.remove("hide");
     });
 
     fullBody.addEventListener("click", function() {

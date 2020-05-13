@@ -2,8 +2,7 @@
     "name": "PigGame",
     "short_name": "PigGame",
     "description": "PigGame",
-    "start_url": "/piggame",
-    "scope": "/piggame/",
+    "start_url": "/?utm_source=homescreen",
     "background_color": "#EB4D4D",
     "theme_color": "#EB4D4D",
     "icons": [{
@@ -11,6 +10,6 @@
         "sizes": "512x512",
         "type": "image/png"
     }],
-    "display" : "any",
+    "display": "standalone",
     "orientation" : "natural"
 }
